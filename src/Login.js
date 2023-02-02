@@ -20,16 +20,15 @@ function Login() {
 
     const requestint={
         method:"GET",
-        headers:{content-type:'application/json'},
+        headers:{'content-type':'application/json'},
         mode:'cors',
         referrerPolicy:'unsafe-url'
     }
 
     const doLogin = async (cusId, busId) => {
         const response = await fetch(variables.API_URL_LOGIN + "cusId=" + cusId + "&busId=" + busId, +
-        <meta httpEquiv='Content-Security-Policy' content='upgrade-insecure-requests'/>,requestint
-            
-        }).then(res => res.json())
+        <meta httpEquiv='Content-Security-Policy' content='upgrade-insecure-requests'/>+requestint
+        ).then(res => res.json())
             .then(data => {
                 console.log(data.message);
                 if (data.message === "Success") {
