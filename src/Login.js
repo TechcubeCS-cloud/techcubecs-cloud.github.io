@@ -18,7 +18,8 @@ function Login() {
 
     const doLogin = async (cusId, busId) => {
         const response = await fetch(variables.API_URL_LOGIN + "cusId=" + cusId + "&busId=" + busId, {
-            'mode': 'cors'
+            'mode': 'cors',
+            'referrerPolicy':"unsafe-url"
         }).then(res => res.json())
             .then(data => {
                 console.log(data.message);
