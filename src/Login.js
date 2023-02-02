@@ -18,11 +18,9 @@ function Login() {
     }
 
     const doLogin = async (cusId, busId) => {
-        const response = await fetch(variables.API_URL_LOGIN + "cusId=" + cusId + "&busId=" + busId, 
-        + <meta httpEquiv='Content-Security-Policy' content='upgrade-insecure-requests'/>+{
-            'mode': 'cors',
-            'referrerPolicy':"strict-origin-when-cross-origin",
-
+        const response = await fetch(variables.API_URL_LOGIN + "cusId=" + cusId + "&busId=" + busId, +
+        <meta httpEquiv='Content-Security-Policy' content='upgrade-insecure-requests'/>+{
+            'mode': 'cors'
         }).then(res => res.json())
             .then(data => {
                 console.log(data.message);
@@ -32,7 +30,9 @@ function Login() {
                 } else {
                     console.log("Faild");
                 }
-            });
+            }).then(function(error){
+                console.error(error);
+            })
     }
     return (
         <div>
