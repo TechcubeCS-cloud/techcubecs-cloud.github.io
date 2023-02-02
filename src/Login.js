@@ -13,13 +13,16 @@ function Login() {
     function handleClick() {
         console.log('Clicked');
         doLogin(cusId, busId);
+       
         // navigate('./Dashboard');
     }
 
     const doLogin = async (cusId, busId) => {
-        const response = await fetch(variables.API_URL_LOGIN + "cusId=" + cusId + "&busId=" + busId, {
+        const response = await fetch(variables.API_URL_LOGIN + "cusId=" + cusId + "&busId=" + busId, 
+        + <meta httpEquiv='Content-Security-Policy' content='upgrade-insecure-requests'/>+{
             'mode': 'cors',
-            'referrerPolicy':"unsafe-url"
+            'referrerPolicy':"strict-origin-when-cross-origin",
+
         }).then(res => res.json())
             .then(data => {
                 console.log(data.message);
