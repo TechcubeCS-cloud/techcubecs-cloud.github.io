@@ -3,13 +3,15 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Login from './Login';
 import Dashboard from './Dashboard';
+import Test from './Test';
 
 function App() {
   return (
     <div className="App">
       <Routes>
         <Route path='/' element={<Login/>}/>
-        <Route path='/Dashboard' element={<Dashboard/>}/>
+        {/* <Route path='/Test' element={<Test/>}/> */}
+        <Route path='/Dashboard' element={<test/>}/>
       </Routes>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
