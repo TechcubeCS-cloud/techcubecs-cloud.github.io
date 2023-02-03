@@ -50,7 +50,7 @@ function Login() {
                 </Helmet> */}
             <div className='auth-form-container'>
                 <form className='login-form'>
-                    <h1>Business Access</h1>
+                    <h1>Techcube Business Access</h1>
                     <label>Customer ID</label>
                     <input value={cusId} onChange={(e) => setcusId(e.target.value)} type="custId" placeholder="Customer ID" />
                     <label>Business ID</label>
