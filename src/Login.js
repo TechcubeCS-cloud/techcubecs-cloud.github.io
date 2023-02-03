@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import Dashboard from './Dashboard';
 import { variables } from './Variables';
 import { type } from '@testing-library/user-event/dist/type';
+import Test from './Test';
+import { Helmet } from 'react-helmet';
 
 function Login() {
     const [cusId, setcusId] = useState('');
@@ -14,33 +16,38 @@ function Login() {
     function handleClick() {
         console.log('Clicked');
         doLogin(cusId, busId);
-       
+
         // navigate('./Dashboard');
     }
 
-    const requestint={
-        method:"GET",
-        headers:{'content-type':'application/json'},
-        mode:'cors',
-        referrerPolicy:'unsafe-url'
+    const requestint = {
+        method: "GET",
+        mode: 'cors'
     }
 
     const doLogin = async (cusId, busId) => {
-        const response = await fetch(variables.API_URL_LOGIN + "cusId=" + cusId + "&busId=" + busId, +
-        <meta httpEquiv='Content-Security-Policy' content='upgrade-insecure-requests'/>,{requestint}
+        const response = await fetch(variables.API_URL_LOGIN + "cusId=" + cusId + "&busId=" + busId,
+            {
+                'mode': 'cors',
+                'method': 'GET'
+            }
         ).then(res => res.json())
             .then(data => {
                 console.log(data.message);
                 if (data.message === "Success") {
                     console.log("Business Access");
+                    // navigate('./Test', { state: { id: 1, name: 'kandu' } });
                     navigate('./Dashboard',{state:{id:1,name:'kandu'}});
                 } else {
                     console.log("Faild");
                 }
-            }).catch(e=>console.error(e));
+            }).catch(e => console.error(e));
     }
     return (
         <div>
+            {/* <Helmet>
+                <meta httpEquiv='Content-Security-Policy' content='upgrade-insecure-requests'/>
+                </Helmet> */}
             <div className='auth-form-container'>
                 <form className='login-form'>
                     <h1>Business Access</h1>
@@ -48,7 +55,6 @@ function Login() {
                     <input value={cusId} onChange={(e) => setcusId(e.target.value)} type="custId" placeholder="Customer ID" />
                     <label>Business ID</label>
                     <input value={busId} onChange={(e) => setbusId(e.target.value)} type="busId" placeholder="Business ID" />
-
                 </form>
                 <button onClick={handleClick}>Click Me</button>
                 <ul>
@@ -56,6 +62,7 @@ function Login() {
                 </ul>
 
             </div>
+
         </div>
     )
 }
