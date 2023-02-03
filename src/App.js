@@ -10,7 +10,8 @@ function App() {
     <div className="App">
       <Routes>
         <Route path='/' element={<Login/>}/>
-        <Route path='/Dashboard' element={<Dashboard/>}/>
+        {/* <Route path='/Test' element={<Test/>}/> */}
+        <Route path='/Dashboard' element={<test/>}/>
       </Routes>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
