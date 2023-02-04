@@ -29,7 +29,8 @@ function Login() {
         const response = await fetch(variables.API_URL_LOGIN + "cusId=" + cusId + "&busId=" + busId,
             {
                 'mode':'cors',
-                'headers':{'content-type':'application/json'}
+                'headers':{'content-type':'application/json',
+                'Access-Control-Allow-Headers':"*"},
                 
             }
         ).then(res => res.json())
