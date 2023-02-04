@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import { BrowserRouter, Route, Switch, NavLink, useSearchParams, useLocation } from 'react-router-dom';
 import { render } from '@testing-library/react';
-import { Component, useEffect, useState, View, Text } from 'react';
+import { Component, useEffect, useState, View, text } from 'react';
 import { variables } from './Variables';
 import './App.css';
 import image from './image/cooking.gif';
