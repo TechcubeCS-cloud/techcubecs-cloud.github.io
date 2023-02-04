@@ -28,8 +28,9 @@ function Login() {
     const doLogin = async (cusId, busId) => {
         const response = await fetch(variables.API_URL_LOGIN + "cusId=" + cusId + "&busId=" + busId,
             {
-                'mode': 'no-cors',
-                'method': 'GET'
+                'mode':'cors',
+                'headers':{'content-type':'application/json'}
+                
             }
         ).then(res => res.json())
             .then(data => {
