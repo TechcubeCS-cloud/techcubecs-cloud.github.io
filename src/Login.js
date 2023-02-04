@@ -26,14 +26,14 @@ function Login() {
     const headers = {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'POST,PATCH,OPTIONS'
+        'Access-Control-Allow-Methods': 'GET',
+        'Accept': 'application/json',
     }
 
     const doLogin = async (cusId, busId) => {
         const response = await fetch(variables.API_URL_LOGIN + "cusId=" + cusId + "&busId=" + busId,
             {
-                mode: requestint,
-                headers: headers
+                'mode':'cors'
             }
         ).then(res => res.json())
             .then(data => {
@@ -54,7 +54,7 @@ function Login() {
                 </Helmet> */}
             <div className='auth-form-container'>
                 <form className='login-form'>
-                    <h1>Techcube Business Access</h1>
+                    <h1>Business Access</h1>
                     <label>Customer ID</label>
                     <input value={cusId} onChange={(e) => setcusId(e.target.value)} type="custId" placeholder="Customer ID" />
                     <label>Business ID</label>
