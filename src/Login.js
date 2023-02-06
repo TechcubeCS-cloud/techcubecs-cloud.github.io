@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,createSearchParams, json } from 'react-router-dom';
 import Dashboard from './Dashboard';
 import { variables } from './Variables';
 import { type } from '@testing-library/user-event/dist/type';
@@ -12,10 +12,12 @@ function Login() {
     const [cusId, setcusId] = useState('');
     const [busId, setbusId] = useState('');
     const navigate = useNavigate();
+    const [logData,setlogData]=useState('');
 
     function handleClick() {
         console.log('Clicked');
         doLogin(cusId, busId);
+       
 
         // navigate('./Dashboard');
     }
@@ -38,14 +40,28 @@ function Login() {
         ).then(res => res.json())
             .then(data => {
                 console.log(data.message);
-                if (data.message === "Success") {
+                console.log(data.Data[0].BusID);
+                console.log(busId);
+               
+                if (data.Data[0].BusID == busId) {
                     console.log("Business Access");
-                    // navigate('./Test', { state: { id: 1, name: 'kandu' } });
-                    navigate('./Dashboard', { state: { id: 1, name: 'kandu' } });
+                    // navigate('./Dashboard', { state: { id: 1, name: 'kandu' } });
+                    navigate({
+                        pathname:'./Dashboard',
+                        search:createSearchParams({
+                            cusId:cusId,
+                            busId:busId
+                        }).toString()
+                    });
                 } else {
                     console.log("Faild");
                 }
             }).catch(e => console.error(e));
+
+            if(typeof logData!="undefined" && logData !=null && logData.length!=null){
+               
+            }
+           
     }
     return (
         <div>

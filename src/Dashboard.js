@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import { BrowserRouter, Route, Switch, NavLink, useSearchParams, useLocation } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, NavLink, useSearchParams } from 'react-router-dom';
 import { render } from '@testing-library/react';
 import { Component, useEffect, useState, View, text } from 'react';
 import { variables } from './Variables';
@@ -13,14 +13,15 @@ function Dashboard(){
   const rowCountP=false;
   const [CusId,setCusId]=useState('');
   const [BusId,setBusId]=useState('');
+  const[searchparams]=useSearchParams();
 
   const refreshList_Preparing=()=>{
-    fetch(variables.API_URL_PREPARING+"CusId="+100237+"&BusId="+200796,{
+    fetch(variables.API_URL_PREPARING+"CusId="+searchparams.get("cusId")+"&BusId="+searchparams.get("busId"),{
       'mode':'cors'
     })
       .then(response => response.json())
       .then(data => {
-        console.log(variables.API_URL_PREPARING+"CusId="+100237+"&BusId="+200796)
+        console.log(variables.API_URL_PREPARING+"CusId="+searchparams.get("cusId")+"&BusId="+searchparams.get("busId"))
         console.log("Data");
         setpreparing(data );
         if (preparing.length > 5) {
@@ -30,7 +31,7 @@ function Dashboard(){
   }
 
   const refreshList_Complete=() =>{
-    fetch(variables.API_URL_COMPLETE+"CusId="+100237+"&BusId="+200796,{
+    fetch(variables.API_URL_COMPLETE+"CusId="+searchparams.get("cusId")+"&BusId="+searchparams.get("busId"),{
       'mode':'cors'
     })
       .then(response => response.json())
