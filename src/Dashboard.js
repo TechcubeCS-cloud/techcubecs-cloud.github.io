@@ -56,8 +56,8 @@ function Dashboard(){
       <text className='tblH'>Preparing...</text>
       {preparing.length > 0 && (
         <ul className='list-group'>
-          {preparing.map(user => (
-            <li className='list-group-item' key={user.BillNo}>{user.BillNo}</ li>
+          {preparing.map((pre,index )=> (
+            <li className='list-group-item' to={pre.BillNo} key={index}>{pre.BillNo}</ li>
           ))}
         </ul>
       )}
@@ -71,8 +71,8 @@ function Dashboard(){
       <text className='tblH'>Ready to Collect</text>
       {complete.length > 0 && (
         <ul className='list-group'>
-          {complete.map(com => (
-            <li className='list-group-item' key={com.BillNo}>{com.BillNo}</li>
+          {complete.map((com,indexc )=> (
+            <li className='list-group-item' to={com.BillNo} key={indexc}>{com.BillNo}</li>
           ))}
         </ul>
       )}
