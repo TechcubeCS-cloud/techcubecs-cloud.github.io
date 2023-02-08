@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { useState } from 'react';
-import { useNavigate,createSearchParams, json } from 'react-router-dom';
+import { useNavigate, createSearchParams, json } from 'react-router-dom';
 import Dashboard from './Dashboard';
 import { variables } from './Variables';
 import { type } from '@testing-library/user-event/dist/type';
@@ -12,14 +12,12 @@ function Login() {
     const [cusId, setcusId] = useState('');
     const [busId, setbusId] = useState('');
     const navigate = useNavigate();
-    const [logData,setlogData]=useState('');
+    const [logData, setlogData] = useState('');
+    const [success, setsuccess] = useState(false);
 
     function handleClick() {
         console.log('Clicked');
         doLogin(cusId, busId);
-       
-
-        // navigate('./Dashboard');
     }
 
     const requestint = {
@@ -35,33 +33,34 @@ function Login() {
     const doLogin = async (cusId, busId) => {
         const response = await fetch(variables.API_URL_LOGIN + "cusId=" + cusId + "&busId=" + busId,
             {
-                'mode':'cors'
+                'mode': 'cors'
             }
         ).then(res => res.json())
             .then(data => {
                 console.log(data.message);
                 console.log(data.Data[0].BusID);
                 console.log(busId);
-               
+                setlogData(data.Data[0]);
                 if (data.Data[0].BusID == busId) {
                     console.log("Business Access");
                     // navigate('./Dashboard', { state: { id: 1, name: 'kandu' } });
                     navigate({
-                        pathname:'./Dashboard',
-                        search:createSearchParams({
-                            cusId:cusId,
-                            busId:busId
+                        pathname: './Dashboard',
+                        search: createSearchParams({
+                            cusId: cusId,
+                            busId: busId
                         }).toString()
                     });
                 } else {
                     console.log("Faild");
+                    setsuccess(true);
                 }
             }).catch(e => console.error(e));
 
-            if(typeof logData!="undefined" && logData !=null && logData.length!=null){
-               
-            }
-           
+        if (typeof logData != "undefined" && logData != null && logData.length != null) {
+
+        }
+
     }
     return (
         <div>
@@ -77,6 +76,9 @@ function Login() {
                     <input value={busId} onChange={(e) => setbusId(e.target.value)} type="busId" placeholder="Business ID" />
                 </form>
                 <button onClick={handleClick}>Click Me</button>
+                {success &&
+                    <label>Business not found</label>
+                }
                 <ul>
                     <img className='logoimgBox' alt='pre' src={require('./image/techcube.png')} />
                 </ul>
