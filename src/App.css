@@ -45,7 +45,7 @@ input{
   color:black;
   }
   
-  .tblH{font-size: 1cm;
+  .tblH{font-size: 1.5cm;
   font-weight: bolder;
   text-align: center;
   padding-left: 30%;
@@ -55,7 +55,7 @@ input{
   .list-group {
     display:grid;
     grid-template: min-content;
-    grid-template-columns: repeat(3, 0fr);
+    grid-template-columns: repeat(4, 0fr);
     grid-gap: 1em;
     padding-left: 2%;
     padding-top: 2%;
