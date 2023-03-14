@@ -57,31 +57,31 @@ function Dashboard(){
       {preparing.length > 0 && (
         <ul className='list-group'>
           {preparing.map((pre,index )=> (
-            <li className='list-group-item' to={pre.BillNo} key={index}>{pre.BillNo}</ li>
+            <li className='list-group-item-L' to={pre.BillNo} key={index}>{pre.BillNo}</ li>
           ))}
         </ul>
       )}
-      {preparing.length==0 &&(
+      {/* {preparing.length==0 &&(
         <ul>
           <img className='imgBox' alt='pre' src={require('./image/cooking.gif')}/>
         </ul>
-      )}
+      )} */}
     </div>
     <div className='split right'>
       <text className='tblH'>Ready to Collect</text>
       {complete.length > 0 && (
         <ul className='list-group'>
           {complete.map((com,indexc )=> (
-            <li className='list-group-item' to={com.BillNo} key={indexc}>{com.BillNo}</li>
+            <li className='list-group-item-R' to={com.BillNo} key={indexc}>{com.BillNo}</li>
           ))}
         </ul>
       )}
-      {complete.length == 0 && (
+      {/* {complete.length == 0 && (
         <ul>
           <img className='imgBox' alt='com' src={require('./image/ready.gif')}/>
         </ul>
 
-      )}
+      )} */}
     </div>
   </div>
   )
