@@ -42,7 +42,7 @@ function Login() {
                 console.log(busId);
                 setlogData(data.Data[0]);
                 if (data.Data[0].BusID == busId) {
-                    console.log("Business Login");
+                    console.log("Customer Business Login");
                     // navigate('./Dashboard', { state: { id: 1, name: 'kandu' } });
                     navigate({
                         pathname: './Dashboard',
