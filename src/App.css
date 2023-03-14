@@ -49,7 +49,7 @@ input{
   font-weight: bolder;
   text-align: center;
   padding-left: 30%;
-  color: #5F093D;
+  color: white;
   }
   
   .list-group {
@@ -61,8 +61,18 @@ input{
     padding-top: 2%;
   }
   
-  .list-group-item {
-    background:#142270;
+  .list-group-item-L {
+    background:goldenrod;
+    padding: 0%;
+    text-align:center;
+    font-weight: bolder;
+    font-size: 310%;
+    color:white;
+    list-style-type: none;
+  }
+
+  .list-group-item-R {
+    background:black;
     padding: 0%;
     text-align:center;
     font-weight: bolder;
@@ -83,12 +93,12 @@ input{
   
   .left {
     left: 0;
-    background-color:#CADFD9;
+    background-color:black;
   }
   
   .right {
     right: 0;
-    background-color:#00BFD6;
+    background-color:#F6B833;
   }
   
   .imgBox{
