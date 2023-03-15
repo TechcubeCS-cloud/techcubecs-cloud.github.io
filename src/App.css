@@ -62,7 +62,7 @@ input{
   }
   
   .list-group-item-L {
-    background:goldenrod;
+    background:#FFCD05;
     padding: 0%;
     text-align:center;
     font-weight: bolder;
@@ -98,7 +98,7 @@ input{
   
   .right {
     right: 0;
-    background-color:#F6B833;
+    background-color:#FFCD05;
   }
   
   .imgBox{
