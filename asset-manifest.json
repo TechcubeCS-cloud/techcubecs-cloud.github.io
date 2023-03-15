@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.609b51ef.css",
+    "main.css": "/static/css/main.2f8bddd0.css",
     "main.js": "/static/js/main.38953ccc.js",
     "static/js/787.8710021f.chunk.js": "/static/js/787.8710021f.chunk.js",
     "static/media/cooking.gif": "/static/media/cooking.e8bf54f6324be09be0f5.gif",
     "static/media/techcube.png": "/static/media/techcube.a8f6d53b53c91ee7a299.png",
     "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/index.html",
-    "main.609b51ef.css.map": "/static/css/main.609b51ef.css.map",
+    "main.2f8bddd0.css.map": "/static/css/main.2f8bddd0.css.map",
     "main.38953ccc.js.map": "/static/js/main.38953ccc.js.map",
     "787.8710021f.chunk.js.map": "/static/js/787.8710021f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.609b51ef.css",
+    "static/css/main.2f8bddd0.css",
     "static/js/main.38953ccc.js"
   ]
 }
