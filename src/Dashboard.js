@@ -53,7 +53,7 @@ function Dashboard(){
   return(
     <div className='tableM'>
     <div className='split left'>
-      <text className='tblH'>Preparing...</text>
+      <text className='tblH-L'>Preparing...</text>
       {preparing.length > 0 && (
         <ul className='list-group'>
           {preparing.map((pre,index )=> (
@@ -68,7 +68,7 @@ function Dashboard(){
       )} */}
     </div>
     <div className='split right'>
-      <text className='tblH'>Ready to Collect</text>
+      <text className='tblH-R'>Ready to Collect</text>
       {complete.length > 0 && (
         <ul className='list-group'>
           {complete.map((com,indexc )=> (
