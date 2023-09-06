@@ -57,7 +57,7 @@ function Dashboard(){
       {preparing.length > 0 && (
         <ul className='list-group'>
           {preparing.map((pre,index )=> (
-            <li className='list-group-item-L' to={pre.BillNo} key={index}>{pre.TokenNo}</ li>
+            <li className='list-group-item-L' to={pre.TokenNo} key={index}>{pre.TokenNo}</ li>
           ))}
         </ul>
       )}
@@ -74,7 +74,7 @@ function Dashboard(){
       {complete.length > 0 && (
         <ul className='list-group'>
           {complete.map((com,indexc )=> (
-            <li className='list-group-item-R' to={com.BillNo} key={indexc}>{com.TokenNo}</li>
+            <li className='list-group-item-R' to={com.TokenNo} key={indexc}>{com.TokenNo}</li>
           ))}
         </ul>
       )}
