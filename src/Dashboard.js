@@ -67,7 +67,7 @@ function Dashboard(){
           <img className='imgBox' alt='pre' src={require('./image/cooking.gif')}/>
         </ul>
       )} */}
-      )} */}
+      
     </div>
     <div className='split right'>
       <text className='tblH-R'>Ready to Collect</text>
@@ -85,7 +85,7 @@ function Dashboard(){
         </ul>
 
       )} */}
-      )} */}
+    
     </div>
   </div>
   )
