@@ -53,7 +53,7 @@ function Dashboard(){
   return(
     <div className='tableM'>
     <div className='split left'>
-      <text className='tblH'>Preparing...</text>
+      <text className='tblH-L'>Preparing...</text>
       {preparing.length > 0 && (
         <ul className='list-group'>
           {preparing.map((pre,index )=> (
@@ -62,13 +62,15 @@ function Dashboard(){
         </ul>
       )}
       {/* {preparing.length==0 &&(
+      {/* {preparing.length==0 &&(
         <ul>
           <img className='imgBox' alt='pre' src={require('./image/cooking.gif')}/>
         </ul>
       )} */}
+      )} */}
     </div>
     <div className='split right'>
-      <text className='tblH'>Ready to Collect</text>
+      <text className='tblH-R'>Ready to Collect</text>
       {complete.length > 0 && (
         <ul className='list-group'>
           {complete.map((com,indexc )=> (
@@ -77,10 +79,12 @@ function Dashboard(){
         </ul>
       )}
       {/* {complete.length == 0 && (
+      {/* {complete.length == 0 && (
         <ul>
           <img className='imgBox' alt='com' src={require('./image/ready.gif')}/>
         </ul>
 
+      )} */}
       )} */}
     </div>
   </div>
