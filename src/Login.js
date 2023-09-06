@@ -31,10 +31,12 @@ function Login() {
     }
 
     const doLogin = async (cusId, busId) => {
-        const response = await fetch(variables.API_URL_LOGIN + "cusId=" + cusId + "&busId=" + busId,
-            {
-                'mode': 'cors'
-            }
+        console.log(cusId,busId);
+        const response = await fetch(variables.API_URL_LOGIN + "cusId=" + cusId + "&busId=" + busId
+        // const response = await fetch("http://office.techcube.co.uk/CollectionScreen_API/api/Preparing?CusId="+100237+"&BusId="+200796,
+            // {
+            //     'mode': 'cors'
+            // }
         ).then(res => res.json())
             .then(data => {
                 console.log(data.message);

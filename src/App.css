@@ -69,6 +69,7 @@ input{
     font-size: 310%;
     color:white;
     list-style-type: none;
+    border-radius: 20%;
   }
 
   .list-group-item-R {
@@ -79,6 +80,7 @@ input{
     font-size: 310%;
     color:white;
     list-style-type: none;
+    border-radius: 20%;
   }
   
   .split {
